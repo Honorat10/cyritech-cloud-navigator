@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Cyritech Cloud Security & Loans</title>
+    <meta name="description" content="Découvrez l'histoire, l'équipe et les valeurs de Cyritech. Présence en Afrique et Europe pour vos projets IT et financement.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'jetbrains': ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        'cyri-blue-dark': '#1F2A44',
+                        'cyri-blue-light': '#3A8BCD',
+                        'cyri-red': '#B03031',
+                        'cyri-black': '#111111',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-cyri-black">
+    <!-- Navigation -->
+    <nav class="bg-cyri-blue-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold">Cyritech</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-cyri-blue-light transition-colors">Accueil</a>
+                    <a href="about.html" class="text-cyri-blue-light">À propos</a>
+                    <a href="services.html" class="hover:text-cyri-blue-light transition-colors">Services</a>
+                    <a href="contact.html" class="hover:text-cyri-blue-light transition-colors">Contact</a>
+                    <a href="contact.html" class="bg-cyri-blue-light text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all">Audit Gratuit</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="md:hidden hidden bg-cyri-blue-dark rounded-lg mt-2 p-4">
+                <a href="index.html" class="block text-white py-2 hover:text-cyri-blue-light">Accueil</a>
+                <a href="about.html" class="block text-cyri-blue-light py-2">À propos</a>
+                <a href="services.html" class="block text-white py-2 hover:text-cyri-blue-light">Services</a>
+                <a href="contact.html" class="block text-white py-2 hover:text-cyri-blue-light">Contact</a>
+                <a href="contact.html" class="block bg-cyri-blue-light text-white py-2 px-4 rounded-lg mt-2 text-center">Audit Gratuit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-cyri-blue-dark to-cyri-blue-light text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6">À propos de Cyritech</h1>
+                <p class="text-xl lg:text-2xl mb-8">
+                    Votre partenaire de confiance pour la transformation digitale en Afrique et Europe
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Histoire et Vision -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-scroll">
+                    <h2 class="text-4xl font-bold text-cyri-blue-dark mb-8">Notre histoire</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Fondée en 2020, Cyritech Cloud Security & Loans naît de la vision de démocratiser l'accès aux technologies cloud et à la cybersécurité en Afrique, tout en facilitant le financement des équipements informatiques.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Partant du constat que de nombreuses entreprises africaines et européennes rencontrent des difficultés pour moderniser leur infrastructure IT faute de capitaux ou d'expertise, nous avons créé une offre unique combinant conseil, implémentation et financement.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-cyri-blue-dark mb-6">Notre vision</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-cyri-blue-light rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">1</span>
+                            </div>
+                            <p class="text-gray-600">Devenir le leader de la transformation digitale en Afrique francophone</p>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-cyri-blue-light rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">2</span>
+                            </div>
+                            <p class="text-gray-600">Faciliter l'accès aux technologies de pointe pour toutes les entreprises</p>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-6 h-6 bg-cyri-blue-light rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">3</span>
+                            </div>
+                            <p class="text-gray-600">Créer un pont technologique entre l'Afrique et l'Europe</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-scroll">
+                    <div class="bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Nos chiffres clés</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">150+</div>
+                                <div class="text-sm opacity-90">Clients accompagnés</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">5</div>
+                                <div class="text-sm opacity-90">Pays de présence</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">90%</div>
+                                <div class="text-sm opacity-90">Taux de satisfaction</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">2M€</div>
+                                <div class="text-sm opacity-90">Financements accordés</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipe -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-scroll">
+                <h2 class="text-4xl font-bold text-cyri-blue-dark mb-6">Notre équipe</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Une équipe passionnée et expérimentée, présente sur deux continents
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Membre 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in-scroll">
+                    <div class="w-24 h-24 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">CK</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-cyri-blue-dark mb-2">Cyril Kouakou</h3>
+                    <p class="text-cyri-blue-light font-medium mb-4">CEO & Fondateur</p>
+                    <p class="text-gray-600 text-sm">
+                        15 ans d'expérience en cybersécurité et cloud. Diplômé d'HEC Paris et certifié CISSP. Basé à Cotonou.
+                    </p>
+                </div>
+                
+                <!-- Membre 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in-scroll">
+                    <div class="w-24 h-24 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">AD</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-cyri-blue-dark mb-2">Amélie Dubois</h3>
+                    <p class="text-cyri-blue-light font-medium mb-4">CTO</p>
+                    <p class="text-gray-600 text-sm">
+                        Architecte cloud AWS/Azure, 12 ans en développement logiciel. École Polytechnique. Basée à Paris.
+                    </p>
+                </div>
+                
+                <!-- Membre 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in-scroll">
+                    <div class="w-24 h-24 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">KM</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-cyri-blue-dark mb-2">Kwame Mensah</h3>
+                    <p class="text-cyri-blue-light font-medium mb-4">Directeur Commercial Afrique</p>
+                    <p class="text-gray-600 text-sm">
+                        Expert en business development, 10 ans en IT B2B. Université d'Abidjan. Basé en Côte d'Ivoire.
+                    </p>
+                </div>
+                
+                <!-- Membre 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in-scroll">
+                    <div class="w-24 h-24 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">SF</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-cyri-blue-dark mb-2">Sophie Fernandez</h3>
+                    <p class="text-cyri-blue-light font-medium mb-4">Responsable Financement</p>
+                    <p class="text-gray-600 text-sm">
+                        Spécialiste crédit et leasing IT, 8 ans en banque d'affaires. ESCP Business School. Basée à Bruxelles.
+                    </p>
+                </div>
+                
+                <!-- Membre 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in-scroll">
+                    <div class="w-24 h-24 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">IT</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-cyri-blue-dark mb-2">Ibrahim Traoré</h3>
+                    <p class="text-cyri-blue-light font-medium mb-4">Ingénieur DevOps Senior</p>
+                    <p class="text-gray-600 text-sm">
+                        Expert Kubernetes et CI/CD, 7 ans en infrastructure. Certifié AWS Solutions Architect. Basé à Cotonou.
+                    </p>
+                </div>
+                
+                <!-- Membre 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in-scroll">
+                    <div class="w-24 h-24 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">ML</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-cyri-blue-dark mb-2">Marie Leclerc</h3>
+                    <p class="text-cyri-blue-light font-medium mb-4">Consultante ERP/CRM</p>
+                    <p class="text-gray-600 text-sm">
+                        Experte Dolibarr et ERP open-source, 6 ans en conseil fonctionnel. MIAGE. Basée à Paris.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-scroll">
+                <h2 class="text-4xl font-bold text-cyri-blue-dark mb-6">Nos valeurs & engagements</h2>
+                <p class="text-xl text-gray-600">
+                    Les principes qui guident notre action quotidienne
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Valeur 1 -->
+                <div class="text-center fade-in-scroll">
+                    <div class="w-20 h-20 bg-cyri-blue-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyri-blue-dark mb-4">Transparence</h3>
+                    <p class="text-gray-600">
+                        Nous croyons en une communication claire et honnête avec nos clients. 
+                        Pas de coûts cachés, pas de promesses irréalistes. Que des faits et des résultats mesurables.
+                    </p>
+                </div>
+                
+                <!-- Valeur 2 -->
+                <div class="text-center fade-in-scroll">
+                    <div class="w-20 h-20 bg-cyri-blue-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyri-blue-dark mb-4">Excellence technique</h3>
+                    <p class="text-gray-600">
+                        Notre équipe se forme en continu aux dernières technologies. 
+                        Certifications AWS, Azure, ISO 27001 : nous investissons dans l'expertise pour vous offrir le meilleur.
+                    </p>
+                </div>
+                
+                <!-- Valeur 3 -->
+                <div class="text-center fade-in-scroll">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-cyri-blue-dark mb-4">Impact social & RSE</h3>
+                    <p class="text-gray-600">
+                        Nous soutenons l'éducation numérique en Afrique via des bourses et ateliers. 
+                        Recyclage du matériel IT et partenariats avec des associations locales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Présence géographique -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-scroll">
+                <h2 class="text-4xl font-bold text-cyri-blue-dark mb-6">Notre présence</h2>
+                <p class="text-xl text-gray-600">
+                    Afrique & Europe : une couverture géographique pour vous servir au plus près
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-scroll">
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold text-cyri-blue-dark mb-6">Nos bureaux</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-cyri-blue-light rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white text-sm font-bold">🇧🇯</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyri-blue-dark">Cotonou, Bénin</h4>
+                                    <p class="text-gray-600 text-sm">Siège social - Hub Afrique de l'Ouest</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-cyri-blue-light rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white text-sm font-bold">🇨🇮</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyri-blue-dark">Abidjan, Côte d'Ivoire</h4>
+                                    <p class="text-gray-600 text-sm">Bureau commercial</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-cyri-blue-light rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white text-sm font-bold">🇫🇷</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyri-blue-dark">Paris, France</h4>
+                                    <p class="text-gray-600 text-sm">Siège Europe - R&D</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-cyri-blue-light rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white text-sm font-bold">🇧🇪</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyri-blue-dark">Bruxelles, Belgique</h4>
+                                    <p class="text-gray-600 text-sm">Bureau financement</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in-scroll">
+                    <div class="w-full h-96 bg-gray-200 rounded-xl flex items-center justify-center">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126660.96225071518!2d2.2945397!3d6.3654295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102354e2a4bb5705%3A0x4a78e3de1faf4c14!2sCotonou%2C%20B%C3%A9nin!5e0!3m2!1sfr!2sfr!4v1635789123456!5m2!1sfr!2sfr"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; border-radius: 12px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-cyri-blue-dark text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto fade-in-scroll">
+                <h2 class="text-4xl font-bold mb-6">Rejoignez l'aventure Cyritech</h2>
+                <p class="text-xl mb-8">
+                    Vous partagez nos valeurs ? Vous voulez contribuer à la transformation digitale de l'Afrique ? 
+                    Nous recrutons des talents passionnés !
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-cyri-blue-light text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all">
+                        Nous contacter
+                    </a>
+                    <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-cyri-blue-dark transition-all">
+                        Découvrir nos services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyri-blue-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Cyritech</h3>
+                    <p class="text-gray-300 mb-4">
+                        Votre partenaire IT & Financement en Afrique et Europe.
+                    </p>
+                    <p class="text-sm text-gray-400">
+                        Certification ISO/IEC 27001 en cours.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="rse.html" class="text-gray-300 hover:text-white transition-colors">Politique RSE</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <p>🇧🇯 Cotonou, Bénin</p>
+                        <p>🇫🇷 Paris, France</p>
+                        <p>📧 contact@cyritech.com</p>
+                        <p>📞 +229 XX XX XX XX</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-300 mb-4 text-sm">
+                        Restez informés de nos actualités IT.
+                    </p>
+                    <form class="space-y-3">
+                        <input 
+                            type="email" 
+                            placeholder="Votre email"
+                            class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:border-cyri-blue-light focus:outline-none"
+                        >
+                        <button type="submit" class="w-full bg-cyri-blue-light text-white py-2 rounded-lg hover:bg-opacity-90 transition-all">
+                            S'abonner
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Cyritech Cloud Security & Loans. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
