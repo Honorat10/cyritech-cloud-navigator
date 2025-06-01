@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -85,14 +84,14 @@
             backdrop-filter: blur(10px);
         }
         
-        .hand-3d-container {
+        .server-3d-container {
             width: 400px;
             height: 400px;
             margin: 0 auto;
         }
         
         @media (max-width: 768px) {
-            .hand-3d-container {
+            .server-3d-container {
                 width: 300px;
                 height: 300px;
             }
@@ -165,13 +164,19 @@
                     </div>
                 </div>
                 
-                <!-- 3D Hand Animation -->
+                <!-- 3D Server Animation -->
                 <div class="flex justify-center">
-                    <div id="hand-3d-container" class="hand-3d-container"></div>
-                    <div id="hand-fallback" class="hand-3d-container hidden flex items-center justify-center">
-                        <div class="w-64 h-64 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-full flex items-center justify-center floating-animation">
+                    <div id="server-3d-container" class="server-3d-container"></div>
+                    <div id="server-fallback" class="server-3d-container hidden flex items-center justify-center">
+                        <div class="w-64 h-64 bg-gradient-to-br from-cyri-blue-light to-cyri-blue-dark rounded-lg flex items-center justify-center floating-animation shadow-2xl">
                             <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                <path d="M4 2h16c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm0 2v4h16V4H4zm0 6v4h16v-4H4zm0 6v4h16v-4H4z"/>
+                                <circle cx="6" cy="6" r="1"/>
+                                <circle cx="9" cy="6" r="1"/>
+                                <circle cx="6" cy="12" r="1"/>
+                                <circle cx="9" cy="12" r="1"/>
+                                <circle cx="6" cy="18" r="1"/>
+                                <circle cx="9" cy="18" r="1"/>
                             </svg>
                         </div>
                     </div>
@@ -580,10 +585,13 @@
                 
                 <!-- Contact -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <h4 class="text-lg font-semibold mb-6">Nos bureaux</h4>
                     <div class="space-y-3 text-gray-300">
+                        <p>🇨🇮 Abidjan, Côte d'Ivoire</p>
                         <p>🇧🇯 Cotonou, Bénin</p>
-                        <p>🇫🇷 Paris, France</p>
+                        <p>🇱🇺 Luxembourg</p>
+                        <p>🇧🇪 Bruxelles, Belgique</p>
+                        <p>🇳🇱 Amsterdam, Pays-Bas</p>
                         <p>📧 contact@cyritech.com</p>
                         <p>📞 +229 XX XX XX XX</p>
                     </div>
@@ -627,10 +635,10 @@
     </div>
 
     <script>
-        // 3D Hand Animation with Three.js
+        // 3D Server Animation with Three.js
         function init3DScene() {
-            const container = document.getElementById('hand-3d-container');
-            const fallback = document.getElementById('hand-fallback');
+            const container = document.getElementById('server-3d-container');
+            const fallback = document.getElementById('server-fallback');
             
             // Check for mobile device and WebGL support
             const isMobile = window.innerWidth < 768;
@@ -659,43 +667,69 @@
             container.appendChild(renderer.domElement);
             
             // Lighting
-            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.8);
             scene.add(ambientLight);
             
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
             directionalLight.position.set(1, 1, 1);
             scene.add(directionalLight);
             
-            // Create stylized hand geometry
-            const handGroup = new THREE.Group();
+            const pointLight = new THREE.PointLight(0x3A8BCD, 0.5);
+            pointLight.position.set(0, 0, 5);
+            scene.add(pointLight);
             
-            // Palm (box)
-            const palmGeometry = new THREE.BoxGeometry(2, 3, 0.5);
-            const handMaterial = new THREE.MeshPhongMaterial({ 
-                color: 0x3A8BCD,
+            // Create server rack
+            const serverGroup = new THREE.Group();
+            
+            // Server rack frame
+            const rackGeometry = new THREE.BoxGeometry(3, 4, 1.5);
+            const rackMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x2a2a2a,
                 transparent: true,
                 opacity: 0.9
             });
-            const palm = new THREE.Mesh(palmGeometry, handMaterial);
-            handGroup.add(palm);
+            const rack = new THREE.Mesh(rackGeometry, rackMaterial);
+            serverGroup.add(rack);
             
-            // Fingers (cylinders)
-            for (let i = 0; i < 4; i++) {
-                const fingerGeometry = new THREE.CylinderGeometry(0.2, 0.2, 1.5);
-                const finger = new THREE.Mesh(fingerGeometry, handMaterial);
-                finger.position.set(-1.5 + i, 2, 0);
-                finger.rotation.z = Math.PI / 2;
-                handGroup.add(finger);
+            // Server units (3 servers stacked)
+            for (let i = 0; i < 3; i++) {
+                const serverGeometry = new THREE.BoxGeometry(2.8, 0.8, 1.4);
+                const serverMaterial = new THREE.MeshPhongMaterial({ 
+                    color: 0x3A8BCD,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const server = new THREE.Mesh(serverGeometry, serverMaterial);
+                server.position.y = 1.2 - (i * 1.2);
+                serverGroup.add(server);
+                
+                // LED indicators
+                for (let j = 0; j < 4; j++) {
+                    const ledGeometry = new THREE.SphereGeometry(0.05);
+                    const ledMaterial = new THREE.MeshBasicMaterial({ 
+                        color: Math.random() > 0.5 ? 0x00ff00 : 0xff0000,
+                        transparent: true,
+                        opacity: 0.8
+                    });
+                    const led = new THREE.Mesh(ledGeometry, ledMaterial);
+                    led.position.set(-1.2 + (j * 0.3), 1.2 - (i * 1.2), 0.75);
+                    serverGroup.add(led);
+                }
             }
             
-            // Thumb
-            const thumbGeometry = new THREE.CylinderGeometry(0.25, 0.25, 1.2);
-            const thumb = new THREE.Mesh(thumbGeometry, handMaterial);
-            thumb.position.set(-2.2, 0.5, 0);
-            thumb.rotation.z = Math.PI / 4;
-            handGroup.add(thumb);
+            // Network cables
+            for (let i = 0; i < 5; i++) {
+                const cableGeometry = new THREE.CylinderGeometry(0.02, 0.02, 1);
+                const cableMaterial = new THREE.MeshPhongMaterial({ 
+                    color: 0x333333
+                });
+                const cable = new THREE.Mesh(cableGeometry, cableMaterial);
+                cable.position.set(1.2, -1.5, 0.5 - (i * 0.2));
+                cable.rotation.x = Math.PI / 2;
+                serverGroup.add(cable);
+            }
             
-            scene.add(handGroup);
+            scene.add(serverGroup);
             camera.position.z = 8;
             
             // Animation variables
@@ -718,15 +752,22 @@
                 time += 0.01;
                 
                 // Rotation
-                handGroup.rotation.y = Math.sin(time * 0.5) * 0.3;
-                handGroup.rotation.x = Math.sin(time * 0.3) * 0.1;
+                serverGroup.rotation.y = Math.sin(time * 0.3) * 0.2;
+                serverGroup.rotation.x = Math.sin(time * 0.2) * 0.1;
                 
                 // Floating
-                handGroup.position.y = Math.sin(time) * 0.3;
+                serverGroup.position.y = Math.sin(time) * 0.2;
                 
                 // Hover scale effect
-                const targetScale = isHovered ? 1.05 : 1;
-                handGroup.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+                const targetScale = isHovered ? 1.1 : 1;
+                serverGroup.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+                
+                // Animate LED lights
+                serverGroup.children.forEach((child, index) => {
+                    if (child.material && child.material.color && index > 3) {
+                        child.material.opacity = 0.5 + Math.sin(time * 2 + index) * 0.3;
+                    }
+                });
                 
                 renderer.render(scene, camera);
             }
