@@ -110,16 +110,16 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white hover:text-cyri-blue-light transition-colors">Accueil</a>
-                    <a href="about.html" class="text-white hover:text-cyri-blue-light transition-colors">À propos</a>
-                    <a href="services.html" class="text-white hover:text-cyri-blue-light transition-colors">Services</a>
-                    <a href="contact.html" class="text-white hover:text-cyri-blue-light transition-colors">Contact</a>
+                    <a href="index.html" class="navbar-link text-black hover:text-cyri-blue-light transition-colors">Accueil</a>
+                    <a href="about.html" class="navbar-link text-black hover:text-cyri-blue-light transition-colors">À propos</a>
+                    <a href="services.html" class="navbar-link text-black hover:text-cyri-blue-light transition-colors">Services</a>
+                    <a href="contact.html" class="navbar-link text-black hover:text-cyri-blue-light transition-colors">Contact</a>
                     <a href="#audit" class="bg-cyri-blue-light text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-all">Audit Gratuit</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-white">
+                    <button id="mobile-menu-btn" class="navbar-mobile-btn text-black">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -786,10 +786,31 @@
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
+            const navbarLinks = document.querySelectorAll('.navbar-link');
+            const mobileBtn = document.querySelector('.navbar-mobile-btn');
+            
             if (window.scrollY > 50) {
                 navbar.classList.add('navbar-scrolled');
+                // Change links to white when scrolled
+                navbarLinks.forEach(link => {
+                    link.classList.remove('text-black');
+                    link.classList.add('text-white');
+                });
+                if (mobileBtn) {
+                    mobileBtn.classList.remove('text-black');
+                    mobileBtn.classList.add('text-white');
+                }
             } else {
                 navbar.classList.remove('navbar-scrolled');
+                // Change links to black when at top
+                navbarLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-black');
+                });
+                if (mobileBtn) {
+                    mobileBtn.classList.remove('text-white');
+                    mobileBtn.classList.add('text-black');
+                }
             }
         });
         
